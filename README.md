@@ -5,5 +5,7 @@ PREDICTION DE FRAUDE FINANCIERE (Carte bancaire
 User story 
 Les taches 
 
-# Techno 
+# OMAR
+
+# AYA 
 
