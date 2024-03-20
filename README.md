@@ -5,4 +5,5 @@ PREDICTION DE FRAUDE FINANCIERE (Carte bancaire
 User story 
 Les taches 
 
-#PREDICTION 
+# Techno 
+
