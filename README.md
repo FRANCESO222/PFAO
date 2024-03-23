@@ -1,4 +1,5 @@
-# "Detection de Fraude bancaire"  
+# "Detection de Fraude bancaire" 
+- Utilisation des modèles de machine learning pour la détection des fraudes
 
 
 # Projet en cours de réalisation par :
