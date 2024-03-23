@@ -10,10 +10,12 @@
 - Fonctionnalités 1 ( User Story 1 )
 - Comprendre L dataset 
 
-# Technologies:
-- Visual Studio Code
+# Outils et  Technologies:
 - Python
 - Pandas
-- Jupyter
-- DataFrames
+- NumPy
+- Matplotlib
+- Jupyter Notebook
+- Scikit-learn
+
 
