@@ -1,11 +1,14 @@
-# PFAO
-PREDICTION DE FRAUDE FINANCIERE (Carte bancaire)
+" Detection de Fraude bancaire  "
 
-#Tache aujourd'hui  
-User story 
-Les taches 
 
-# OMAR
+Projet en cours de réalisation par :
+Omar Abdallaoui alaoui groupe e
+Aya Lazrak groupe e
 
-# AYA 
+Fonctionnalités proposé
+Fonctionnalités 1 ( User Story 1 )
+Comprendre L dataset 
+
+Technologies
+PYTHON
 
