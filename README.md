@@ -12,4 +12,8 @@
 
 # Technologies:
 - Visual Studio Code
+- Python
+- Pandas
+- Jupyter
+- DataFrames
 
