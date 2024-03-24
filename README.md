@@ -1,5 +1,6 @@
 # "Detection de Fraude bancaire" 
 - Utilisation des modèles de machine learning pour la détection des fraudes
+- https://github.com/users/FRANCESO222/projects/1
 
 
 # Projet en cours de réalisation par :
