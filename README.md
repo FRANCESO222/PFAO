@@ -18,5 +18,7 @@
 - Matplotlib
 - Jupyter Notebook
 - Scikit-learn
+- seaborn
+- inline 
 
 
