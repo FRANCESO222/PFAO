@@ -21,4 +21,5 @@
 - seaborn
 - inline 
 
-
+#Installation et Execution de l'application 
+cette partie n as pas ete mise en proposition tant que nous avons pas avacer dans le projet 
