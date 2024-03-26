@@ -8,8 +8,10 @@
 - Aya Lazrak Groupe E.
 
 # Fonctionnalités proposé:
-- Fonctionnalités 1 ( User Story 1 )
-- Comprendre L dataset 
+- Problematique et description du sujet
+- La collection des données
+- pre-trairtement des données avec Python et les Biblistiques de la science des données
+- Faire une présentation détaillée sur le domaine de la science des données et son rôle dans le domaine de la finance
 
 # Outils et  Technologies:
 - Python
