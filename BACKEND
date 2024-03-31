@@ -1,1 +1,20 @@
+import pandas as pd
+
+# Lecture du fichier CSV
+file_path = 'archive/creditcard.csv'  
+df = pd.read_csv(file_path)
+# Remplacer les valeurs 0 par des NaN
+df = df.replace(0, pd.NA)
+
+# Supprimer les lignes contenant des valeurs NaN
+df = df.dropna()
+
+# Remplacer les valeurs NaN restantes par 999
+df.fillna(999, inplace=True)
+
+# Afficher les lignes où 'Time' est égal à 0
+print(df[df['Time'] == 0])
+
+# Afficher le DataFrame final
+print(df)
 
