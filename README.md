@@ -12,6 +12,36 @@
 - La collection des données
 - pre-trairtement des données avec Python et les Biblistiques de la science des données
 - Faire une présentation détaillée sur le domaine de la science des données et son rôle dans le domaine de la finance
+# Technologies
+Si cela peut vous aider le code du readme type est le suivant :
+
+ # " Nom_de_l'app " 
+
+
+ Description de votre projet
+Lien_projet ou je peux voir le kanban,roadmap et taches
+
+
+
+Si cela peut vous aider le code du readme type est le suivant :
+
+ # " Nom_de_l'app " 
+
+
+ Description de votre projet
+Lien_projet ou je peux voir le kanban,roadmap et taches
+
+
+
+
+
+
+
+## Technologies
+- [Visual Studio Code](https://code.visualstudio.com/)
+- [MongoDb](https://www.mongodb.com/)
+
+
 
 # Outils et  Technologies:
 - Python
