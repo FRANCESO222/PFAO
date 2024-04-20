@@ -56,3 +56,119 @@ df = pd.read_csv('BD.csv')
 
 # Afficher les premières lignes du dataframe
 print(df.head())
+
+
+#lire data
+data_df = pd.read_csv(PATH+"/creditcard.csv")
+
+
+#data check
+print("Credit Card Fraud Detection data -  rows:",data_df.shape[0]," columns:", data_df.shape[1])
+
+Credit Card Fraud Detection Predictive Models
+
+Content
+Introduction
+Load packages
+Read the data
+Check the data
+Glimpse the data
+Check missing data
+Check data unbalance
+Data exploration
+Predictive models
+RandomForrestClassifier
+AdaBoostClassifier
+CatBoostClassifier
+XGBoost
+LightGBM
+Conclusions
+References
+Introduction
+The datasets contains transactions made by credit cards in September 2013 by european cardholders. This dataset presents transactions that occurred in two days, where we have 492 frauds out of 284,807 transactions. The dataset is highly unbalanced, the positive class (frauds) account for 0.172% of all transactions.
+
+It contains only numerical input variables which are the result of a PCA transformation.
+
+Due to confidentiality issues, there are not provided the original features and more background information about the data.
+
+Features V1, V2, ... V28 are the principal components obtained with PCA;
+The only features which have not been transformed with PCA are Time and Amount. Feature Time contains the seconds elapsed between each transaction and the first transaction in the dataset. The feature Amount is the transaction Amount, this feature can be used for example-dependant cost-senstive learning.
+Feature Class is the response variable and it takes value 1 in case of fraud and 0 otherwise.
+Load packages
+import pandas as pd 
+import numpy as np
+import matplotlib
+import matplotlib.pyplot as plt
+import seaborn as sns
+%matplotlib inline 
+import plotly.graph_objs as go
+import plotly.figure_factory as ff
+from plotly import tools
+from plotly.offline import download_plotlyjs, init_notebook_mode, plot, iplot
+init_notebook_mode(connected=True)
+
+
+import gc
+from datetime import datetime 
+from sklearn.model_selection import train_test_split
+from sklearn.model_selection import KFold
+from sklearn.metrics import roc_auc_score
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.ensemble import AdaBoostClassifier
+from catboost import CatBoostClassifier
+from sklearn import svm
+import lightgbm as lgb
+from lightgbm import LGBMClassifier
+import xgboost as xgb
+
+pd.set_option('display.max_columns', 100)
+
+
+RFC_METRIC = 'gini'  #metric used for RandomForrestClassifier
+NUM_ESTIMATORS = 100 #number of estimators used for RandomForrestClassifier
+NO_JOBS = 4 #number of parallel jobs used for RandomForrestClassifier
+
+
+#TRAIN/VALIDATION/TEST SPLIT
+#VALIDATION
+VALID_SIZE = 0.20 # simple validation using train_test_split
+TEST_SIZE = 0.20 # test size using_train_test_split
+
+#CROSS-VALIDATION
+NUMBER_KFOLDS = 5 #number of KFolds for cross-validation
+
+
+
+RANDOM_STATE = 2018
+
+MAX_ROUNDS = 1000 #lgb iterations
+EARLY_STOP = 50 #lgb early stop 
+OPT_ROUNDS = 1000  #To be adjusted based on best validation rounds
+VERBOSE_EVAL = 50 #Print out metric result
+
+IS_LOCAL = False
+
+import os
+
+if(IS_LOCAL):
+    PATH="../input/credit-card-fraud-detection"
+else:
+    PATH="../input"
+print(os.listdir(PATH))
+['creditcard.csv']
+Read the data
+data_df = pd.read_csv(PATH+"/creditcard.csv")
+Check the data
+print("Credit Card Fraud Detection data -  rows:",data_df.shape[0]," columns:", data_df.shape[1])
+Credit Card Fraud Detection data -  rows: 284807  columns: 31
+Glimpse the data
+We start by looking to the data features (first 5 rows).
+
+data_df.head()
+
+
+data_df.describe()
+
+total = data_df.isnull().sum().sort_values(ascending = False)
+percent = (data_df.isnull().sum()/data_df.isnull().count()*100).sort_values(ascending = False)
+pd.concat([total, percent], axis=1, keys=['Total', 'Percent']).transpose()
