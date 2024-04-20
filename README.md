@@ -15,8 +15,9 @@
 
 
 # Technologies
-- [Visual Studio Code](https://code.visualstudio.com/)
 - [MongoDb](https://www.mongodb.com/)
+- [jupyter](https://jupyter.org/install)
+  
 
 # Outils et  Technologies:
 - Python
