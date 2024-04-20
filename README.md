@@ -43,9 +43,5 @@
 ## Contexte :
 - Cette base de données est souvent utilisée dans la recherche et le développement de modèles de détection de fraudes, en particulier dans le domaine des transactions par carte de crédit. Elle a été collectée et analysée dans le cadre de la sécurité des systèmes de paiement.
 
-- ## N.B
-- Bonsoir  monsieur
-- nous allons commencer la redaction du cahier de charfe il nous sera rendu le mardi 8 avril 2024 avant 00h
-- je vous l ai mis sur le KanBan 
-- 
+
 
