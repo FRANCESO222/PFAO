@@ -242,4 +242,79 @@ fig, (ax1, ax2) = plt.subplots(ncols=2, figsize=(12,6))
 s = sns.boxplot(ax = ax1, x="Class", y="Amount", hue="Class",data=data_df, palette="PRGn",showfliers=True)
 s = sns.boxplot(ax = ax2, x="Class", y="Amount", hue="Class",data=data_df, palette="PRGn",showfliers=False)
 plt.show();
+fig, (ax1, ax2) = plt.subplots(ncols=2, figsize=(12,6))
+s = sns.boxplot(ax = ax1, x="Class", y="Amount", hue="Class",data=data_df, palette="PRGn",showfliers=True)
+s = sns.boxplot(ax = ax2, x="Class", y="Amount", hue="Class",data=data_df, palette="PRGn",showfliers=False)
+plt.show();
+tmp = data_df[['Amount','Class']].copy()
+class_0 = tmp.loc[tmp['Class'] == 0]['Amount']
+class_1 = tmp.loc[tmp['Class'] == 1]['Amount']
+class_0.describe()
+
+class_1.describe()
+
+fraud = data_df.loc[data_df['Class'] == 1]
+
+trace = go.Scatter(
+    x = fraud['Time'],y = fraud['Amount'],
+    name="Amount",
+     marker=dict(
+                color='rgb(238,23,11)',
+                line=dict(
+                    color='red',
+                    width=1),
+                opacity=0.5,
+            ),
+    text= fraud['Amount'],
+    mode = "markers"
+)
+data = [trace]
+layout = dict(title = 'Amount of fraudulent transactions',
+          xaxis = dict(title = 'Time [s]', showticklabels=True), 
+          yaxis = dict(title = 'Amount'),
+          hovermode='closest'
+         )
+fig = dict(data=data, layout=layout)
+iplot(fig, filename='fraud-amount')
+
+
+plt.figure(figsize = (14,14))
+plt.title('Credit Card Transactions features correlation plot (Pearson)')
+corr = data_df.corr()
+sns.heatmap(corr,xticklabels=corr.columns,yticklabels=corr.columns,linewidths=.1,cmap="Reds")
+plt.show()
+
+s = sns.lmplot(x='V20', y='Amount',data=data_df, hue='Class', fit_reg=True,scatter_kws={'s':2})
+s = sns.lmplot(x='V7', y='Amount',data=data_df, hue='Class', fit_reg=True,scatter_kws={'s':2})
+plt.show()
+
+s = sns.lmplot(x='V2', y='Amount',data=data_df, hue='Class', fit_reg=True,scatter_kws={'s':2})
+s = sns.lmplot(x='V5', y='Amount',data=data_df, hue='Class', fit_reg=True,scatter_kws={'s':2})
+plt.show()
+
+var = data_df.columns.values
+
+i = 0
+t0 = data_df.loc[data_df['Class'] == 0]
+t1 = data_df.loc[data_df['Class'] == 1]
+
+sns.set_style('whitegrid')
+plt.figure()
+fig, ax = plt.subplots(8,4,figsize=(16,28))
+
+for feature in var:
+    i += 1
+    plt.subplot(8,4,i)
+    sns.kdeplot(t0[feature], bw=0.5,label="Class = 0")
+    sns.kdeplot(t1[feature], bw=0.5,label="Class = 1")
+    plt.xlabel(feature, fontsize=12)
+    locs, labels = plt.xticks()
+    plt.tick_params(axis='both', which='major', labelsize=12)
+plt.show();
+
+target = 'Class'
+predictors = ['Time', 'V1', 'V2', 'V3', 'V4', 'V5', 'V6', 'V7', 'V8', 'V9', 'V10',\
+       'V11', 'V12', 'V13', 'V14', 'V15', 'V16', 'V17', 'V18', 'V19',\
+       'V20', 'V21', 'V22', 'V23', 'V24', 'V25', 'V26', 'V27', 'V28',\
+       'Amount']
 
